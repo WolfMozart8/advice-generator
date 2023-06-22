@@ -1,0 +1,116 @@
+:root {
+    /* fonts */
+    --quote-font: 'Manrope', sans-serif;
+    /* colors */
+    /* primaru */
+    --light-cyan: hsl(193, 38%, 86%);
+    --neon-green: hsl(150, 100%, 66%);
+    /* neutral */
+    --grayish-blue: hsl(217, 19%, 38%);
+    --dark-grayish-blue: hsl(217, 19%, 24%);
+    --dark-blue: hsl(218, 23%, 16%);
+}
+body {
+    margin: 0;
+    padding: 0;
+
+    min-height: 100vh;
+    background-color: var(--dark-blue);
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+main {
+    opacity: 0; /*initial state*/
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--dark-grayish-blue);
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
+    min-height: 220px;
+    text-align: center;
+    align-items: center;
+    box-shadow: 0 0 20px 5px var(--dark-blue);
+    transition: opacity 5s linear;
+}
+
+
+.quote-advice {
+    text-transform:uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: var(--neon-green);
+    transition: opacity 1s linear;
+}
+.quote-text {
+    color: var(--light-cyan);
+    font-size: 28px;
+    font-family: var(--quote-font);
+    font-weight: 800;
+    min-height: 120px;
+    transition: opacity 1s ease-out
+}
+.divider-img {
+    width: 100%;
+    margin: 20px 0 50px 0;
+}
+.divider-img.desktop {
+    display: block;
+}
+.divider-img.mobile {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+    position: absolute;
+    border: none;
+
+    width: 50px;
+    height: 50px;
+    bottom: -25px;
+    padding: 10px;
+    background-color: var(--neon-green);
+    border-radius: 50%;
+    transition: box-shadow 0.3s;
+}
+button img {
+    width: 80%;
+}
+/* effects */
+button:hover {
+    box-shadow: 0 0 20px 5px var(--neon-green);
+}
+
+.fade-out {
+    opacity: 0;
+}
+.fade-in {
+    opacity: 1;
+}
+/* mobile */
+@media (max-width: 480px) {
+    main {
+        width: 80%;
+        margin: 0px 3%;
+    }
+    button {
+        bottom: -30px;
+        width: 60px;
+        height: 60px;
+    }
+    button img {
+        width: 70%;
+    }
+    .divider-img.desktop {
+        display: none;
+    }
+    .divider-img.mobile {
+        display: block;
+    }
+}
